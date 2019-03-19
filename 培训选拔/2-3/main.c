@@ -1,3 +1,5 @@
+//应用第一部分4控制灯亮度的方法，根据AD采样值大小来控制红灯的亮度。
+//AD采样外部电压，采样电压小，则灯较暗；采样电压高，则灯较亮。
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -26,8 +28,8 @@ int main(void)
     GPIOPinTypeADC(GPIO_PORTD_BASE,GPIO_PIN_0);
     ADCReferenceSet(ADC0_BASE,ADC_REF_EXT_3V);
     ADCSequenceConfigure(ADC0_BASE,0,ADC_TRIGGER_PROCESSOR,0);
-    ADCSequenceStepConfigure(ADC0_BASE,0,0,ADC_CTL_CH5);
-    ADCSequenceStepConfigure(ADC0_BASE,0,1,ADC_CTL_CH5|ADC_CTL_IE|ADC_CTL_END);
+    ADCSequenceStepConfigure(ADC0_BASE,0,0,ADC_CTL_CH7);
+    ADCSequenceStepConfigure(ADC0_BASE,0,1,ADC_CTL_CH7|ADC_CTL_IE|ADC_CTL_END);
     ADCSequenceEnable(ADC0_BASE,0);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
@@ -50,6 +52,7 @@ int main(void)
 void Timer0IntHandler(void)
     {
         TimerIntClear(TIMER0_BASE,TIMER_TIMA_TIMEOUT);
+        ui32Period = (SysCtlClockGet()/2000);
 
         uint32_t ui32ADC0Value[2];
         volatile uint32_t ui32little;
@@ -69,9 +72,13 @@ void Timer0IntHandler(void)
         ui32duty = ui32Vavg/3.3*1000;
         ui32little = ui32Period * ui32duty / 1000;
 
-        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,2);
-        SysCtlDelay(ui32little);
+
+        if(ui32little!=0){
+            GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,2);
+            SysCtlDelay(ui32little/3);
+        }
         GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,0);
 
         TimerLoadSet(TIMER0_BASE,TIMER_A,ui32Period - 1 -ui32little);
+
     }

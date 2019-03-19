@@ -59,7 +59,7 @@ extern "C"
 //*****************************************************************************
 #define PWM_GEN_MODE_DOWN       0x00000000  // Down count mode
 #define PWM_GEN_MODE_UP_DOWN    0x00000002  // Up/Down count mode
-#define PWM_GEN_MODE_SYNC       0x00000038  // Synchronous updates
+#define PWM_GEN_MODE_SYNC       0x00000038  // ouSynchrons updates
 #define PWM_GEN_MODE_NO_SYNC    0x00000000  // Immediate updates
 #define PWM_GEN_MODE_DBG_RUN    0x00000004  // Continue running in debug mode
 #define PWM_GEN_MODE_DBG_STOP   0x00000000  // Stop running in debug mode

@@ -1,17 +1,17 @@
 ******************************************************************************
                   TI ARM Linker PC v18.1.4                     
 ******************************************************************************
->> Linked Sat Mar  2 21:10:34 2019
+>> Linked Tue Mar 12 14:18:22 2019
 
 OUTPUT FILE NAME:   <2-1.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00003ed9
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00003e61
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00004656  0003b9aa  R  X
+  FLASH                 00000000   00040000  000045de  0003ba22  R  X
   SRAM                  20000000   00008000  00000478  00007b88  RW X
 
 
@@ -19,11 +19,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    0000465c   0000465c    r-x
+00000000    00000000    000045e4   000045e4    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    00003d1e   00003d1e    r-x .text
-  00003f8c    00003f8c    000006a8   000006a8    r-- .const
-  00004638    00004638    00000024   00000024    r-- .cinit
+  0000026c    0000026c    00003ca6   00003ca6    r-x .text
+  00003f14    00003f14    000006a8   000006a8    r-- .const
+  000045c0    000045c0    00000024   00000024    r-- .cinit
 20000000    20000000    0000047c   00000000    rw-
   20000000    20000000    0000026c   00000000    rw- .vtable
   20000270    20000270    00000200   00000000    rw- .stack
@@ -38,7 +38,7 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    00003d1e     
+.text      0    0000026c    00003ca6     
                   0000026c    00000f80     sysctl.obj (.text)
                   000011ec    00000b94     gpio.obj (.text)
                   00001d80    0000083a     adc.obj (.text)
@@ -48,48 +48,48 @@ section   page    origin      length       input sections
                   00002c00    0000062e     uart.obj (.text)
                   0000322e    00000002     --HOLE-- [fill = 0]
                   00003230    000003c0     interrupt.obj (.text)
-                  000035f0    00000374     main.obj (.text)
-                  00003964    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
-                  00003b1a    00000136                                   : fd_div_t2.asm.obj (.text)
-                  00003c50    000000fc                                   : fd_mul_t2.asm.obj (.text)
-                  00003d4c    000000c0     fpu.obj (.text)
-                  00003e0c    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
-                  00003e54    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  00003e98    0000003e     cpu.obj (.text)
-                  00003ed6    00000002     --HOLE-- [fill = 0]
-                  00003ed8    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  00003f10    0000002e                                   : i_tofd_t2.asm.obj (.text)
-                  00003f3e    00000020                                   : u_tofd_t2.asm.obj (.text)
-                  00003f5e    00000012                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  00003f70    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
-                  00003f7c    00000006     sysctl.obj (.text:SysCtlDelay)
-                  00003f82    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
-                  00003f86    00000004                                   : exit.c.obj (.text:abort:abort)
+                  000035f0    000002fc     main.obj (.text)
+                  000038ec    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  00003aa2    00000136                                   : fd_div_t2.asm.obj (.text)
+                  00003bd8    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  00003cd4    000000c0     fpu.obj (.text)
+                  00003d94    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  00003ddc    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00003e20    0000003e     cpu.obj (.text)
+                  00003e5e    00000002     --HOLE-- [fill = 0]
+                  00003e60    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00003e98    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  00003ec6    00000020                                   : u_tofd_t2.asm.obj (.text)
+                  00003ee6    00000012                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00003ef8    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00003f04    00000006     sysctl.obj (.text:SysCtlDelay)
+                  00003f0a    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00003f0e    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.const     0    00003f8c    000006a8     
-                  00003f8c    000001b0     sysctl.obj (.const:g_pppui32XTALtoVCO)
-                  0000413c    000000d8     gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
-                  00004214    000000c0     gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
-                  000042d4    0000009c     interrupt.obj (.const:g_pui32Regs)
-                  00004370    00000090     gpio.obj (.const:g_pui32GPIOBaseAddrs)
-                  00004400    0000006c     sysctl.obj (.const:g_pui32Xtals)
-                  0000446c    00000060     timer.obj (.const:g_ppui32TimerIntMap)
-                  000044cc    00000040     timer.obj (.const:g_ppui32TimerIntMapSnowflake)
-                  0000450c    00000040     uart.obj (.const:g_ppui32UARTIntMap)
-                  0000454c    00000040     uart.obj (.const:g_ppui32UARTIntMapSnowflake)
-                  0000458c    00000030     sysctl.obj (.const:g_sXTALtoMEMTIM)
-                  000045bc    00000020     interrupt.obj (.const:g_pui32Priority)
-                  000045dc    00000014     interrupt.obj (.const:g_pui32Dii16Regs)
-                  000045f0    00000014     interrupt.obj (.const:g_pui32EnRegs)
-                  00004604    00000014     interrupt.obj (.const:g_pui32PendRegs)
-                  00004618    00000014     interrupt.obj (.const:g_pui32UnpendRegs)
-                  0000462c    00000008     sysctl.obj (.const:g_pui32VCOFrequencies)
+.const     0    00003f14    000006a8     
+                  00003f14    000001b0     sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  000040c4    000000d8     gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
+                  0000419c    000000c0     gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
+                  0000425c    0000009c     interrupt.obj (.const:g_pui32Regs)
+                  000042f8    00000090     gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00004388    0000006c     sysctl.obj (.const:g_pui32Xtals)
+                  000043f4    00000060     timer.obj (.const:g_ppui32TimerIntMap)
+                  00004454    00000040     timer.obj (.const:g_ppui32TimerIntMapSnowflake)
+                  00004494    00000040     uart.obj (.const:g_ppui32UARTIntMap)
+                  000044d4    00000040     uart.obj (.const:g_ppui32UARTIntMapSnowflake)
+                  00004514    00000030     sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  00004544    00000020     interrupt.obj (.const:g_pui32Priority)
+                  00004564    00000014     interrupt.obj (.const:g_pui32Dii16Regs)
+                  00004578    00000014     interrupt.obj (.const:g_pui32EnRegs)
+                  0000458c    00000014     interrupt.obj (.const:g_pui32PendRegs)
+                  000045a0    00000014     interrupt.obj (.const:g_pui32UnpendRegs)
+                  000045b4    00000008     sysctl.obj (.const:g_pui32VCOFrequencies)
 
-.cinit     0    00004638    00000024     
-                  00004638    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004640    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
-                  00004648    00000004     (__TI_handler_table)
-                  0000464c    00000010     (__TI_cinit_table)
+.cinit     0    000045c0    00000024     
+                  000045c0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000045c8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  000045d0    00000004     (__TI_handler_table)
+                  000045d4    00000010     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -110,10 +110,10 @@ MODULE SUMMARY
        Module                         code    ro data   rw data
        ------                         ----    -------   -------
     .\
-       main.obj                       884     0         4      
+       main.obj                       764     0         4      
        tm4c123gh6pm_startup_ccs.obj   12      620       0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         896     620       4      
+       Total:                         776     620       4      
                                                                
     .\driverlib\
        sysctl.obj                     3974    596       0      
@@ -145,19 +145,19 @@ MODULE SUMMARY
        Stack:                         0       0         512    
        Linker Generated:              0       36        0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   15638   2360      1144   
+       Grand Total:                   15518   2360      1144   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 0000464c records: 2, size/record: 8, table size: 16
-	.bss: load addr=00004638, load size=00000008 bytes, run addr=20000470, run size=0000000c bytes, compression=zero_init
-	.vtable: load addr=00004640, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+__TI_cinit_table @ 000045d4 records: 2, size/record: 8, table size: 16
+	.bss: load addr=000045c0, load size=00000008 bytes, run addr=20000470, run size=0000000c bytes, compression=zero_init
+	.vtable: load addr=000045c8, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004648 records: 1, size/record: 4, table size: 4
+__TI_handler_table @ 000045d0 records: 1, size/record: 4, table size: 4
 	index: 0, handler: __TI_zero_init
 
 
@@ -205,22 +205,22 @@ address   name
 00002151  ADCSoftwareOversampleConfigure    
 00002285  ADCSoftwareOversampleDataGet      
 000021a3  ADCSoftwareOversampleStepConfigure
-00003f87  C$$EXIT                           
-00003ecd  CPUbasepriGet                     
-00003ebf  CPUbasepriSet                     
-00003e99  CPUcpsid                          
-00003eaf  CPUcpsie                          
-00003ea5  CPUprimask                        
-00003ebb  CPUwfi                            
-00003d5f  FPUDisable                        
-00003d4d  FPUEnable                         
-00003dcb  FPUFlushToZeroModeSet             
-00003d97  FPUHalfPrecisionModeSet           
-00003d7f  FPULazyStackingEnable             
-00003db1  FPUNaNModeSet                     
-00003de5  FPURoundingModeSet                
-00003d8b  FPUStackingDisable                
-00003d6d  FPUStackingEnable                 
+00003f0f  C$$EXIT                           
+00003e55  CPUbasepriGet                     
+00003e47  CPUbasepriSet                     
+00003e21  CPUcpsid                          
+00003e37  CPUcpsie                          
+00003e2d  CPUprimask                        
+00003e43  CPUwfi                            
+00003ce7  FPUDisable                        
+00003cd5  FPUEnable                         
+00003d53  FPUFlushToZeroModeSet             
+00003d1f  FPUHalfPrecisionModeSet           
+00003d07  FPULazyStackingEnable             
+00003d39  FPUNaNModeSet                     
+00003d6d  FPURoundingModeSet                
+00003d13  FPUStackingDisable                
+00003cf5  FPUStackingEnable                 
 00001d59  GPIOADCTriggerDisable             
 00001d3b  GPIOADCTriggerEnable              
 00001d1d  GPIODMATriggerDisable             
@@ -269,7 +269,6 @@ address   name
 00001c6b  GPIOPinTypeWakeLow                
 00001c91  GPIOPinWakeStatus                 
 000018c5  GPIOPinWrite                      
-0000388b  InitADC                           
 000033f1  IntDisable                        
 0000337f  IntEnable                         
 00003463  IntIsEnabled                      
@@ -286,7 +285,7 @@ address   name
 00003253  IntRegister                       
 000035bb  IntTrigger                        
 000032a5  IntUnregister                     
-00003f71  ResetISR                          
+00003ef9  ResetISR                          
 000011a9  SysCtlAltClkConfig                
 000008d1  SysCtlClockFreqSet                
 00000d99  SysCtlClockGet                    
@@ -296,7 +295,7 @@ address   name
 00000f5d  SysCtlDeepSleepClockConfigSet     
 00000f3f  SysCtlDeepSleepClockSet           
 000007b5  SysCtlDeepSleepPowerSet           
-00003f7d  SysCtlDelay                       
+00003f05  SysCtlDelay                       
 00000363  SysCtlFlashSectorSizeGet          
 00000337  SysCtlFlashSizeGet                
 00001033  SysCtlGPIOAHBDisable              
@@ -343,7 +342,7 @@ address   name
 00001089  SysCtlVoltageEventClear           
 0000106d  SysCtlVoltageEventConfig          
 0000107d  SysCtlVoltageEventStatus          
-000036c1  Timer0IntHandler                  
+000036cb  Timer0IntHandler                  
 00002b7d  TimerADCEventGet                  
 00002b6b  TimerADCEventSet                  
 000028a1  TimerClockSourceGet               
@@ -424,7 +423,7 @@ address   name
 00002c5f  UARTParityModeSet                 
 0000314b  UARTRxErrorClear                  
 00003139  UARTRxErrorGet                    
-000038f9  UARTSend                          
+00003887  UARTSend                          
 00002e7f  UARTSmartCardDisable              
 00002e4d  UARTSmartCardEnable               
 00002f91  UARTSpaceAvail                    
@@ -433,31 +432,31 @@ address   name
 20000470  __STACK_END                       
 00000200  __STACK_SIZE                      
 20000470  __STACK_TOP                       
-0000464c  __TI_CINIT_Base                   
-0000465c  __TI_CINIT_Limit                  
-00004648  __TI_Handler_Table_Base           
-0000464c  __TI_Handler_Table_Limit          
-00003e55  __TI_auto_init_nobinit_nopinit    
+000045d4  __TI_CINIT_Base                   
+000045e4  __TI_CINIT_Limit                  
+000045d0  __TI_Handler_Table_Base           
+000045d4  __TI_Handler_Table_Limit          
+00003ddd  __TI_auto_init_nobinit_nopinit    
 ffffffff  __TI_pprof_out_hndl               
 ffffffff  __TI_prof_data_size               
 ffffffff  __TI_prof_data_start              
 00000000  __TI_static_base__                
-00003f5f  __TI_zero_init_nomemset           
-00003e0d  __aeabi_d2iz                      
-0000396f  __aeabi_dadd                      
-00003b1b  __aeabi_ddiv                      
-00003c51  __aeabi_dmul                      
-00003965  __aeabi_dsub                      
-00003f11  __aeabi_i2d                       
-00003f3f  __aeabi_ui2d                      
+00003ee7  __TI_zero_init_nomemset           
+00003d95  __aeabi_d2iz                      
+000038f7  __aeabi_dadd                      
+00003aa3  __aeabi_ddiv                      
+00003bd9  __aeabi_dmul                      
+000038ed  __aeabi_dsub                      
+00003e99  __aeabi_i2d                       
+00003ec7  __aeabi_ui2d                      
 ffffffff  __binit__                         
 ffffffff  __c_args__                        
 UNDEFED   __mpu_init                        
 20000270  __stack                           
-00003ed9  _c_int00_noargs                   
+00003e61  _c_int00_noargs                   
 UNDEFED   _system_post_cinit                
-00003f83  _system_pre_init                  
-00003f87  abort                             
+00003f0b  _system_pre_init                  
+00003f0f  abort                             
 ffffffff  binit                             
 20000000  g_pfnRAMVectors                   
 00000000  g_pfnVectors                      
@@ -717,43 +716,42 @@ address   name
 000035b3  IntPriorityMaskGet                
 000035bb  IntTrigger                        
 000035f1  main                              
-000036c1  Timer0IntHandler                  
-0000388b  InitADC                           
-000038f9  UARTSend                          
-00003965  __aeabi_dsub                      
-0000396f  __aeabi_dadd                      
-00003b1b  __aeabi_ddiv                      
-00003c51  __aeabi_dmul                      
-00003d4d  FPUEnable                         
-00003d5f  FPUDisable                        
-00003d6d  FPUStackingEnable                 
-00003d7f  FPULazyStackingEnable             
-00003d8b  FPUStackingDisable                
-00003d97  FPUHalfPrecisionModeSet           
-00003db1  FPUNaNModeSet                     
-00003dcb  FPUFlushToZeroModeSet             
-00003de5  FPURoundingModeSet                
-00003e0d  __aeabi_d2iz                      
-00003e55  __TI_auto_init_nobinit_nopinit    
-00003e99  CPUcpsid                          
-00003ea5  CPUprimask                        
-00003eaf  CPUcpsie                          
-00003ebb  CPUwfi                            
-00003ebf  CPUbasepriSet                     
-00003ecd  CPUbasepriGet                     
-00003ed9  _c_int00_noargs                   
-00003f11  __aeabi_i2d                       
-00003f3f  __aeabi_ui2d                      
-00003f5f  __TI_zero_init_nomemset           
-00003f71  ResetISR                          
-00003f7d  SysCtlDelay                       
-00003f83  _system_pre_init                  
-00003f87  C$$EXIT                           
-00003f87  abort                             
-00004648  __TI_Handler_Table_Base           
-0000464c  __TI_CINIT_Base                   
-0000464c  __TI_Handler_Table_Limit          
-0000465c  __TI_CINIT_Limit                  
+000036cb  Timer0IntHandler                  
+00003887  UARTSend                          
+000038ed  __aeabi_dsub                      
+000038f7  __aeabi_dadd                      
+00003aa3  __aeabi_ddiv                      
+00003bd9  __aeabi_dmul                      
+00003cd5  FPUEnable                         
+00003ce7  FPUDisable                        
+00003cf5  FPUStackingEnable                 
+00003d07  FPULazyStackingEnable             
+00003d13  FPUStackingDisable                
+00003d1f  FPUHalfPrecisionModeSet           
+00003d39  FPUNaNModeSet                     
+00003d53  FPUFlushToZeroModeSet             
+00003d6d  FPURoundingModeSet                
+00003d95  __aeabi_d2iz                      
+00003ddd  __TI_auto_init_nobinit_nopinit    
+00003e21  CPUcpsid                          
+00003e2d  CPUprimask                        
+00003e37  CPUcpsie                          
+00003e43  CPUwfi                            
+00003e47  CPUbasepriSet                     
+00003e55  CPUbasepriGet                     
+00003e61  _c_int00_noargs                   
+00003e99  __aeabi_i2d                       
+00003ec7  __aeabi_ui2d                      
+00003ee7  __TI_zero_init_nomemset           
+00003ef9  ResetISR                          
+00003f05  SysCtlDelay                       
+00003f0b  _system_pre_init                  
+00003f0f  C$$EXIT                           
+00003f0f  abort                             
+000045d0  __TI_Handler_Table_Base           
+000045d4  __TI_CINIT_Base                   
+000045d4  __TI_Handler_Table_Limit          
+000045e4  __TI_CINIT_Limit                  
 20000000  g_pfnRAMVectors                   
 20000270  __stack                           
 20000470  __STACK_END                       
@@ -768,4 +766,4 @@ ffffffff  binit
 UNDEFED   __mpu_init                        
 UNDEFED   _system_post_cinit                
 
-[298 symbols]
+[297 symbols]

@@ -1,3 +1,4 @@
+//温度传感器电压测量及温度计算，UART显示。
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -16,43 +17,40 @@
 
 uint32_t ui32Period;
 void UARTSend(const uint8_t *pucBuffer, uint32_t ulCount);
-void InitADC(uint64_t ui64ADC);
 
 int main(void)
 {
     FPUEnable();
     FPULazyStackingEnable();
-    SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+    SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_1);
 
     GPIOPinConfigure(GPIO_PA0_U0RX);
     GPIOPinConfigure(GPIO_PA1_U0TX);
     GPIOPinTypeUART(GPIO_PORTA_BASE,GPIO_PIN_0 | GPIO_PIN_1);
-    UARTConfigSetExpClk(UART0_BASE,SysCtlClockGet(), 115200, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+    UARTConfigSetExpClk(UART0_BASE,SysCtlClockGet(), 115200, (UART_CONFIG_WLEN_8
+            | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
-    InitADC(ADC_CTL_TS);
+    ADCReferenceSet(ADC0_BASE,ADC_REF_EXT_3V);
+    ADCSequenceConfigure(ADC0_BASE,1,ADC_TRIGGER_PROCESSOR,0);
+    ADCSequenceStepConfigure(ADC0_BASE,1,0,ADC_CTL_TS);
+    ADCSequenceStepConfigure(ADC0_BASE,1,1,ADC_CTL_TS);
+    ADCSequenceStepConfigure(ADC0_BASE,1,2,ADC_CTL_TS);
+    ADCSequenceStepConfigure(ADC0_BASE,1,3,ADC_CTL_TS|ADC_CTL_IE|ADC_CTL_END);
+    ADCSequenceEnable(ADC0_BASE,1);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
     TimerConfigure(TIMER0_BASE,TIMER_CFG_PERIODIC);
 
     ui32Period = (SysCtlClockGet()/2);
     TimerLoadSet(TIMER0_BASE,TIMER_A,ui32Period -1);
-    TimerLoadSet(TIMER0_BASE,TIMER_B,5000);
 
     IntEnable(INT_TIMER0A);
     TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-    IntEnable(INT_TIMER0B);
-    TimerIntEnable(TIMER0_BASE, TIMER_TIMB_TIMEOUT);
     IntMasterEnable();
-
-
-    IntEnable(INT_UART0);
-    UARTIntEnable(UART0_BASE,UART_INT_RX | UART_INT_RT);
     TimerEnable(TIMER0_BASE,TIMER_A);
 
     while(1){
@@ -62,15 +60,13 @@ int main(void)
 void Timer0IntHandler(void)
 {
     TimerIntClear(TIMER0_BASE,TIMER_TIMA_TIMEOUT);
-
     uint32_t ui32ADC0Value[4];
     volatile uint32_t ui32TempAvg;
     volatile double ui32TempValueC;
     uint8_t ui8Temp[4];
 
     ADCIntClear(ADC0_BASE,1);
-    TimerIntClear(TIMER0_BASE,TIMER_TIMB_TIMEOUT);
-    TimerControlTrigger(ADC0_BASE,TIMER_B,ADC0_BASE);
+    ADCProcessorTrigger(ADC0_BASE,1);
 
     while (!ADCIntStatus(ADC0_BASE,1,false)){
 
@@ -94,20 +90,6 @@ void Timer0IntHandler(void)
     UARTSend(ui8Temp, 4);
     UARTCharPut(UART0_BASE,'\r');
     UARTCharPut(UART0_BASE,'\n');
-}
-
-void InitADC(uint64_t ui64ADC){
-    ADCReferenceSet(ADC0_BASE,ADC_REF_EXT_3V);
-    ADCSequenceConfigure(ADC0_BASE,1,ADC_TRIGGER_PROCESSOR,0);
-    ADCSequenceStepConfigure(ADC0_BASE,1,0,ui64ADC);
-    ADCSequenceStepConfigure(ADC0_BASE,1,1,ui64ADC);
-    ADCSequenceStepConfigure(ADC0_BASE,1,2,ui64ADC);
-    ADCSequenceStepConfigure(ADC0_BASE,1,3,ui64ADC|ADC_CTL_IE|ADC_CTL_END);
-
-    IntEnable(INT_ADC0SS1);
-    ADCIntEnable(ADC0_BASE,0);
-    IntPrioritySet(INT_ADC0SS1,0);
-    ADCSequenceEnable(ADC0_BASE,1);
 }
 
 void UARTSend(const uint8_t *pucBuffer, uint32_t ulCount){

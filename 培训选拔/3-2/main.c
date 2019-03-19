@@ -1,3 +1,4 @@
+//输出两路互补的PWM波，死区2μs
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -31,9 +32,7 @@ int main (void)
     PWMGenPeriodSet(PWM0_BASE,PWM_GEN_1,1000);
 
     PWMPulseWidthSet(PWM0_BASE,PWM_OUT_2,500);
-    PWMPulseWidthSet(PWM0_BASE,PWM_OUT_3,500);
-    PWMOutputInvert(PWM0_BASE,PWM_OUT_3,true);
-    PWMDeadBandEnable(PWM0_BASE,PWM_GEN_1,10,10);
+    PWMDeadBandEnable(PWM0_BASE,PWM_GEN_1,40,40);
 
 
     PWMOutputState(PWM0_BASE, (PWM_OUT_2_BIT | PWM_OUT_3_BIT), true);

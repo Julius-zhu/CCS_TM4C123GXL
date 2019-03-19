@@ -11,8 +11,8 @@
 #include "hw_ints.h"
 
 uint32_t duty=0;
-uint32_t cur_duty=1;
-bool flag=1;
+uint32_t cur_duty=0;
+bool flag=true;
 
 int main(void)
 {

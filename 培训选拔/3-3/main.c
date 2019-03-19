@@ -1,3 +1,6 @@
+//输出一路PWM波，初始化占空比为50%。通过按键SW1和SW2来控制占空比变化。
+//按键SW1，占空比减小5%，直到占空比为10%，不再变化；
+//按键SW2，占空比增加5%，直到占空比为90%，不再变化。
 #include <stdint.h>
 #include <stdbool.h>
 #include <math.h>
@@ -64,8 +67,6 @@ int main (void)
 void GPIOIntHandler(void){
     unsigned int Status;
     Status = GPIOIntStatus(GPIO_PORTF_BASE,true);
-    GPIOIntClear(GPIO_PORTF_BASE,Status);
-
     if(Status == GPIO_PIN_0){
         if(duty<90)
             duty =duty+5;
@@ -77,5 +78,7 @@ void GPIOIntHandler(void){
     }
     width = duty*5000/100;
     PWMPulseWidthSet(PWM1_BASE,PWM_OUT_5,width);
+    SysCtlDelay(1500000);
+    GPIOIntClear(GPIO_PORTF_BASE,Status);
 }
 

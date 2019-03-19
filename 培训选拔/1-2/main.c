@@ -10,7 +10,7 @@
 
 int main(void)
 {
-    SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
+    SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,GPIO_PIN_1);
     while(1){
@@ -20,7 +20,7 @@ int main(void)
         else {
             GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1,GPIO_PIN_1);
         }
-        SysCtlDelay(SysCtlClockGet()/2);
+        SysCtlDelay(SysCtlClockGet()/6);
 
     }
 }
