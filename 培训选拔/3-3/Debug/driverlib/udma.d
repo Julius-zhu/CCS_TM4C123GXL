@@ -9,12 +9,6 @@ driverlib/udma.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys
 driverlib/udma.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h
 driverlib/udma.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
 driverlib/udma.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_sysctl.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_types.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_udma.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/debug.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/interrupt.h
-driverlib/udma.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/udma.h
 
 ../driverlib/udma.c: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
@@ -25,9 +19,3 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h:
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_sysctl.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_types.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_udma.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/debug.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/interrupt.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/udma.h: 

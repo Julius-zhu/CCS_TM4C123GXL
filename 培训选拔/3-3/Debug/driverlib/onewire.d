@@ -9,15 +9,6 @@ driverlib/onewire.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/
 driverlib/onewire.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
 driverlib/onewire.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
 driverlib/onewire.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_ints.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_memmap.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_onewire.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_sysctl.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_types.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/debug.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/interrupt.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/onewire.h
-driverlib/onewire.obj: C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/sysctl.h
 
 ../driverlib/onewire.c: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
@@ -28,12 +19,3 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h:
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_ints.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_memmap.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_onewire.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_sysctl.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/inc/hw_types.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/debug.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/interrupt.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/onewire.h: 
-C:/Users/ZJN/Documents/CCS_v8/3-3/driverlib/sysctl.h: 

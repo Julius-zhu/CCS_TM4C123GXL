@@ -14,14 +14,6 @@ driverlib/hibernate.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/includ
 driverlib/hibernate.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h
 driverlib/hibernate.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/abi_prefix.h
 driverlib/hibernate.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/xlocale/_time.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_hibernate.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_ints.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_sysctl.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_types.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/debug.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/hibernate.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/interrupt.h
-driverlib/hibernate.obj: C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/sysctl.h
 
 ../driverlib/hibernate.c: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
@@ -37,11 +29,3 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/_ti_config.h:
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/abi_prefix.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/xlocale/_time.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_hibernate.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_ints.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_sysctl.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/inc/hw_types.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/debug.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/hibernate.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/interrupt.h: 
-C:/Users/ZJN/Documents/CCS_v8/2-2/driverlib/sysctl.h: 

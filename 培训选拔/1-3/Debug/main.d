@@ -16,8 +16,6 @@ main.obj: ../driverlib/pin_map.h
 main.obj: ../driverlib/sysctl.h
 main.obj: ../driverlib/gpio.h
 main.obj: ../driverlib/interrupt.h
-main.obj: C:/Users/ZJN/Documents/CCS_v8/1-3/driverlib/timer.h
-main.obj: C:/Users/ZJN/Documents/CCS_v8/1-3/inc/hw_ints.h
 
 ../main.c: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
@@ -35,5 +33,3 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h:
 ../driverlib/sysctl.h: 
 ../driverlib/gpio.h: 
 ../driverlib/interrupt.h: 
-C:/Users/ZJN/Documents/CCS_v8/1-3/driverlib/timer.h: 
-C:/Users/ZJN/Documents/CCS_v8/1-3/inc/hw_ints.h: 

@@ -50,11 +50,11 @@ int main (void)
 
     PWMGenConfigure(PWM1_BASE,PWM_GEN_2,PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
 
-    PWMGenPeriodSet(PWM1_BASE,PWM_GEN_2,5000);
+    PWMGenPeriodSet(PWM1_BASE,PWM_GEN_2,1000000);
 
-    duty=50;
-    width = 5000*duty/100;
-    PWMPulseWidthSet(PWM1_BASE,PWM_OUT_5,width);
+
+    duty=25000;
+    PWMPulseWidthSet(PWM1_BASE,PWM_OUT_5,25000);
 
     PWMOutputState(PWM1_BASE, (PWM_OUT_5_BIT), true);
 
@@ -68,16 +68,15 @@ void GPIOIntHandler(void){
     unsigned int Status;
     Status = GPIOIntStatus(GPIO_PORTF_BASE,true);
     if(Status == GPIO_PIN_0){
-        if(duty<90)
-            duty =duty+5;
+        if(duty<125000)
+            duty =duty+125000;
      }
     else if(Status == GPIO_PIN_4)
     {
-        if(duty>10)
-            duty=duty-5;
+        if(duty>25000)
+            duty=duty-25000;
     }
-    width = duty*5000/100;
-    PWMPulseWidthSet(PWM1_BASE,PWM_OUT_5,width);
+    PWMPulseWidthSet(PWM1_BASE,PWM_OUT_5,duty);
     SysCtlDelay(1500000);
     GPIOIntClear(GPIO_PORTF_BASE,Status);
 }
